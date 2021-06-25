@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">CourseRegistration</string>
+    <string name="lewislogo">lewisLogo</string>
+    <string name="view_classes_button">View Classes</string>
+    <string name="register_for_classes_button">Register for Classes</string>
+    <string name="drop_classes_button">Drop Classes</string>
+    <string name="view_schedule_button">View Schedule</string>
 
-    <string-array name="courseType">
-        <item>Core Courses</item>
-        <item>Concentration Courses</item>
-    </string-array>
 
-    <string-array name="coreClassesCourseNumber">
+    <string-array name="courseName">
         <item>Applied Calculus MATH-24000 </item>
         <item>Linear Algebra MATH-30500</item>
         <item>Discrete Mathematics MATH-31000</item>
@@ -23,9 +24,6 @@
         <item>Programming Languages CPSC-46000</item>
         <item>Theory of Algorithms and Computation CPSC-46500</item>
         <item>Software Systems Capstone Project CPSC-49200</item>
-    </string-array>
-
-    <string-array name="concentratedClassesCourseNumber">
         <item>Scientific Computing CPSC-31500</item>
         <item>Applied Programming Languages CPSC-36000</item>
         <item>Artificial Intelligence CPSC-47000</item>

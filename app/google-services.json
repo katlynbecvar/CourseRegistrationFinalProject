@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "604350008738",
+    "firebase_url": "https://mad2021-cda9b-default-rtdb.firebaseio.com",
+    "project_id": "mad2021-cda9b",
+    "storage_bucket": "mad2021-cda9b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604350008738:android:4640902e91298f1e5336fb",
+        "android_client_info": {
+          "package_name": "katlynbecvar.cs.courseregistration"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604350008738-f2f5pjsjq22hev8tuih23ehffjtqja02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1Ux8Q_OLvxDi2sIRbV1_h1pNp9HPq3hQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "604350008738-f2f5pjsjq22hev8tuih23ehffjtqja02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604350008738:android:839dd217b841973f5336fb",
+        "android_client_info": {
+          "package_name": "katlynbecvar.cs.survey"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604350008738-f2f5pjsjq22hev8tuih23ehffjtqja02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1Ux8Q_OLvxDi2sIRbV1_h1pNp9HPq3hQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "604350008738-f2f5pjsjq22hev8tuih23ehffjtqja02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
