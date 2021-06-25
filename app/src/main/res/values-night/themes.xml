@@ -1,14 +1,16 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.CourseRegistration" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <color name="primaryColor">#d50000</color>
-        <color name="primaryLightColor">#ff5131</color>
-        <color name="primaryDarkColor">#9b0000</color>
-        <color name="secondaryColor">#bdbdbd</color>
-        <color name="secondaryLightColor">#efefef</color>
-        <color name="secondaryDarkColor">#8d8d8d</color>
-        <color name="primaryTextColor">#ffffff</color>
-        <color name="secondaryTextColor">#000000</color>>
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-    </style>
+<!-- Base application theme. -->
+<style name="Theme.Survey" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <!-- Primary brand color. -->
+    <item name="colorPrimary">#d50000</item>
+    <item name="colorPrimaryVariant">#ff5131</item>
+    <item name="colorOnPrimary">#ffffff</item>
+    <!-- Secondary brand color. -->
+    <item name="colorSecondary">#bdbdbd</item>
+    <item name="colorSecondaryVariant">#efefef</item>
+    <item name="colorOnSecondary">#000000</item>
+    <!-- Status bar color. -->
+    <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    <!-- Customize your theme here. -->
+</style>
 </resources>
