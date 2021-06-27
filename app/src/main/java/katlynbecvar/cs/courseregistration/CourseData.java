@@ -28,7 +28,39 @@ public class CourseData {
             "Cindy Howard","Sung Kim","Greg Manning","Lucien Ngalamou","Safwan Omari","Jason Perry","Mathias Plass","John Rinderer",
             "Michael Smith"};
 
+    public static String[] getCourseNameArray() {
+        return courseNameArray;
+    }
 
+    public static void setCourseNameArray(String[] courseNameArray) {
+        CourseData.courseNameArray = courseNameArray;
+    }
 
+    public static int[] getCourseNumberArray() {
+        return courseNumberArray;
+    }
 
+    public static void setCourseNumberArray(int[] courseNumberArray) {
+        CourseData.courseNumberArray = courseNumberArray;
+    }
+
+    public static int[] getCreditHoursArray() {
+        return creditHoursArray;
+    }
+
+    public static void setCreditHoursArray(int[] creditHoursArray) {
+        CourseData.creditHoursArray = creditHoursArray;
+    }
+
+    public static String[] getCourseInstructorArray() {
+        return courseInstructorArray;
+    }
+
+    public static void setCourseInstructorArray(String[] courseInstructorArray) {
+        CourseData.courseInstructorArray = courseInstructorArray;
+    }
+
+    public CourseData() {
+
+    }
 }

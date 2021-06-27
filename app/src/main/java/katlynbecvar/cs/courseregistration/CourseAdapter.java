@@ -1,18 +1,11 @@
 package katlynbecvar.cs.courseregistration;
 
-import android.content.Context;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -23,19 +16,19 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
         TextView textViewCourseName;
         TextView textViewCourseNumber;
-        TextView textViewInstructur;
+        TextView textViewInstructor;
         TextView textViewCreditHour;
 
         public CourseViewHolder(View itemView) {
             super(itemView);
             this.textViewCourseName = (TextView) itemView.findViewById(R.id.textViewCourseName);
             this.textViewCourseNumber = (TextView) itemView.findViewById(R.id.textViewCourseNumber);
-            this.textViewInstructur = (TextView) itemView.findViewById(R.id.textViewInstructor);
+            this.textViewInstructor = (TextView) itemView.findViewById(R.id.textViewInstructor);
             this.textViewCreditHour = (TextView) itemView.findViewById(R.id.textViewCreditHours);
 
         }
     }
-    public CourseAdapter(ArrayList<CourseData> courseData){
+    public CourseAdapter(ArrayList<katlynbecvar.cs.courseregistration.CourseData> courseData){
         this.courseData = courseData;
     }
 
@@ -53,10 +46,13 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     public void onBindViewHolder(CourseAdapter.CourseViewHolder holder, int position) {
         TextView textViewCourseName = holder.textViewCourseName;
         TextView textViewCourseNumber = holder.textViewCourseNumber;
-        TextView textViewInstructor = holder.textViewInstructur;
+        TextView textViewInstructor = holder.textViewInstructor;
         TextView textViewCreditHours = holder.textViewCreditHour;
 
-        textViewCourseName.setText(CourseData.get());
+        textViewCourseName.setText(CourseData.getCourseNameArray()[position]);
+        textViewCourseNumber.setText(CourseData.getCourseNumberArray()[position]);
+        textViewInstructor.setText(CourseData.getCourseInstructorArray()[position]);
+        textViewCreditHours.setText(CourseData.getCreditHoursArray()[position]);
 
     }
 
