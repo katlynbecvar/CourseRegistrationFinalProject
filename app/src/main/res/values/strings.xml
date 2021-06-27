@@ -5,41 +5,81 @@
     <string name="register_for_classes_button">Register for Classes</string>
     <string name="drop_classes_button">Drop Classes</string>
     <string name="view_schedule_button">View Schedule</string>
+    <string name="drop_class_header">Drop Class</string>
+    <string name="view_schedule_header">View Schedule</string>
+    <string name="drop_classes_header">Drop Classes</string>
+    <string name="view_classes_header">View Classes</string>
+    <string name="register_for_class_header">Register for Classes</string>
+    <string name="course_registration_header">Course Registration</string>
 
 
     <string-array name="courseName">
-        <item>Applied Calculus MATH-24000 </item>
-        <item>Linear Algebra MATH-30500</item>
-        <item>Discrete Mathematics MATH-31000</item>
-        <item>Applied Probability and Statistics MATH-31400</item>
-        <item>Introduction to Computer Science CPSC-20000</item>
-        <item>Programming Fundamentals CPSC-21000</item>
-        <item>Object-Oriented Programming CPSC-245000</item>
-        <item>Introduction to Networks CPSC-28100</item>
-        <item>Computer Organization CPSC-30000</item>
-        <item>Algorithms and Data Structures CPSC-34000</item>
-        <item>Operating Systems CPSC-35000</item>
-        <item>Computer Security CPSC-42000</item>
-        <item>Software Engineering CPSC-44000</item>
-        <item>Programming Languages CPSC-46000</item>
-        <item>Theory of Algorithms and Computation CPSC-46500</item>
-        <item>Software Systems Capstone Project CPSC-49200</item>
-        <item>Scientific Computing CPSC-31500</item>
-        <item>Applied Programming Languages CPSC-36000</item>
-        <item>Artificial Intelligence CPSC-47000</item>
-        <item>Video Game Programming 1 CPSC-41000</item>
-        <item>Viedo Game Programming 2 CPSC-41500</item>
-        <item>Computer Graphics Programming CPSC-43000</item>
-        <item>.NET Programming CPSC-23000</item>
-        <item>Web and Distributed Programming CPSC-24700</item>
-        <item>Database Systems CPSC-33000</item>
-        <item>Mobile Application Development CPSC-41700</item>
-        <item>Encryption CPSC-42500</item>
-        <item>Programming for Penetration Testing CPSC-42700</item>
-        <item>Programming for Digital Forensics CPSC-42800</item>
-        <item>Introduction to Unix CPSC-22000</item>
-        <item>Cloud Computing and Virtualization CPSC-35500</item>
-        <item>Client-Server Computing CPSC-48000</item>
+        <item>Applied Calculus</item>
+        <item>Linear Algebra</item>
+        <item>Discrete Mathematics</item>
+        <item>Applied Probability and Statistics</item>
+        <item>Introduction to Computer Science</item>
+        <item>Programming Fundamentals</item>
+        <item>Object-Oriented Programming</item>
+        <item>Introduction to Networks</item>
+        <item>Computer Organization</item>
+        <item>Algorithms and Data Structures</item>
+        <item>Operating Systems</item>
+        <item>Computer Security</item>
+        <item>Software Engineering</item>
+        <item>Programming Languages</item>
+        <item>Theory of Algorithms and Computation</item>
+        <item>Software Systems Capstone Project</item>
+        <item>Scientific Computing</item>
+        <item>Applied Programming Languages</item>
+        <item>Artificial Intelligence</item>
+        <item>Video Game Programming 1</item>
+        <item>Viedo Game Programming 2</item>
+        <item>Computer Graphics Programming</item>
+        <item>.NET Programming</item>
+        <item>Web and Distributed Programming</item>
+        <item>Database Systems</item>
+        <item>Mobile Application Development</item>
+        <item>Encryption</item>
+        <item>Programming for Penetration Testing</item>
+        <item>Programming for Digital Forensics</item>
+        <item>Introduction to Unix</item>
+        <item>Cloud Computing and Virtualization</item>
+        <item>Client-Server Computing</item>
+    </string-array>
+
+    <string-array name="courseNumber">
+        <item>24000</item>
+        <item>30500</item>
+        <item>31000</item>
+        <item>31400</item>
+        <item>20000</item>
+        <item>21000</item>
+        <item>24500</item>
+        <item>28100</item>
+        <item>30000</item>
+        <item>34000</item>
+        <item>35000</item>
+        <item>42000</item>
+        <item>44000</item>
+        <item>46000</item>
+        <item>46500</item>
+        <item>49200</item>
+        <item>31500</item>
+        <item>36000</item>
+        <item>47000</item>
+        <item>41000</item>
+        <item>41500</item>
+        <item>43000</item>
+        <item>23000</item>
+        <item>24700</item>
+        <item>33000</item>
+        <item>41700</item>
+        <item>42500</item>
+        <item>42700</item>
+        <item>42800</item>
+        <item>22000</item>
+        <item>35500</item>
     </string-array>
 
     <string-array name="creditHours">
