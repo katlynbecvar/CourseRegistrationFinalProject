@@ -15,7 +15,7 @@
         <activity android:name=".DropClasses"
             android:label="@string/drop_classes_header"
             android:parentActivityName=".MainActivity"/>
-        <activity android:name=".ViewClasses"
+        <activity android:name=".ViewClassesActivity"
             android:label="@string/view_classes_header"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".RegisterForClasses"

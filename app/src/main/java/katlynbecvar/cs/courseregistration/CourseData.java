@@ -10,7 +10,7 @@ public class CourseData {
             "Computer Organization", "Algorithms and Data Structures", "Operating Systems",
             "Computer Security", "Software Engineering", "Programming Languages", "Theory of Algorithms and Computation",
             "Software Systems Capstone Project", "Scientific Computing", "Applied Programming Languages",
-            "Artificial Intelligence", "Video Game Programming 1", "Viedo Game Programming 2",
+            "Artificial Intelligence", "Video Game Programming 1", "Video Game Programming 2",
             "Computer Graphics Programming", ".NET Programming", "Web and Distributed Programming", "Database Systems",
             "Mobile Application Development", "Encryption", "Programming for Penetration Testing", "Programming for Digital Forensics",
             "Introduction to Unix", "Cloud Computing and Virtualization", "Client Server Computing"};
@@ -31,42 +31,6 @@ public class CourseData {
     public static String[] getCourseNameArray() {
         return courseNameArray;
     }
-<<<<<<< HEAD
-
-    public static void setCourseNameArray(String[] courseNameArray) {
-        CourseData.courseNameArray = courseNameArray;
-    }
-
-    public static int[] getCourseNumberArray() {
-        return courseNumberArray;
-    }
-
-    public static void setCourseNumberArray(int[] courseNumberArray) {
-        CourseData.courseNumberArray = courseNumberArray;
-    }
-
-    public static int[] getCreditHoursArray() {
-        return creditHoursArray;
-    }
-
-    public static void setCreditHoursArray(int[] creditHoursArray) {
-        CourseData.creditHoursArray = creditHoursArray;
-    }
-
-    public static String[] getCourseInstructorArray() {
-        return courseInstructorArray;
-    }
-
-    public static void setCourseInstructorArray(String[] courseInstructorArray) {
-        CourseData.courseInstructorArray = courseInstructorArray;
-    }
-
-    public CourseData() {
-
-    }
-
-=======
->>>>>>> e850b1b2477d84d55adee7d1d18a0999fc0798d2
 
     public static void setCourseNameArray(String[] courseNameArray) {
         CourseData.courseNameArray = courseNameArray;

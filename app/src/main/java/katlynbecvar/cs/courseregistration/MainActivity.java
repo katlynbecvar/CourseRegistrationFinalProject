@@ -1,20 +1,14 @@
 package katlynbecvar.cs.courseregistration;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
-
-import static katlynbecvar.cs.courseregistration.CourseAdapter.courseData;
 
 public class MainActivity extends AppCompatActivity {
     Button viewClassButton;
@@ -34,14 +28,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //put into view classes.
       //  myViewOnClickListener = new myViewOnClickListener(this);
-        recyclerView.setHasFixedSize(true);
+ /*       recyclerView.setHasFixedSize(true);
 
         recyclerViewLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(recyclerViewLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setItemAnimator(new DefaultItemAnimator());*/
 
-        courseInfo = new ArrayList<CourseDataModel>();
+        //in View classes
+/*        courseInfo = new ArrayList<CourseDataModel>();
         for (int i = 0; i < CourseData.courseNameArray.length; i++) {
 
             courseInfo.add(new CourseDataModel(
@@ -50,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
                     CourseData.courseInstructorArray[i],
                     CourseData.creditHoursArray[i]
             ));
-        }
+        }*/
 
-        adapter = new CourseAdapter(courseData);
-        recyclerView.setAdapter(adapter);
+        //adapter = new CourseAdapter(courseData);
+        //recyclerView.setAdapter(adapter);
 
         //initialize buttons and set onClickListener
         viewClassButton = (Button)findViewById(R.id.view_classes_button);
@@ -61,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-               Intent viewClassesIntent = new Intent(MainActivity.this, ViewClasses.class);
+               Intent viewClassesIntent = new Intent(MainActivity.this, ViewClassesActivity.class);
                startActivity(viewClassesIntent);
             }
         });
