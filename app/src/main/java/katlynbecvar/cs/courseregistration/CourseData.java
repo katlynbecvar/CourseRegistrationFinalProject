@@ -31,6 +31,7 @@ public class CourseData {
     public static String[] getCourseNameArray() {
         return courseNameArray;
     }
+<<<<<<< HEAD
 
     public static void setCourseNameArray(String[] courseNameArray) {
         CourseData.courseNameArray = courseNameArray;
@@ -64,7 +65,38 @@ public class CourseData {
 
     }
 
+=======
+>>>>>>> e850b1b2477d84d55adee7d1d18a0999fc0798d2
 
+    public static void setCourseNameArray(String[] courseNameArray) {
+        CourseData.courseNameArray = courseNameArray;
+    }
 
+    public static int[] getCourseNumberArray() {
+        return courseNumberArray;
+    }
 
+    public static void setCourseNumberArray(int[] courseNumberArray) {
+        CourseData.courseNumberArray = courseNumberArray;
+    }
+
+    public static int[] getCreditHoursArray() {
+        return creditHoursArray;
+    }
+
+    public static void setCreditHoursArray(int[] creditHoursArray) {
+        CourseData.creditHoursArray = creditHoursArray;
+    }
+
+    public static String[] getCourseInstructorArray() {
+        return courseInstructorArray;
+    }
+
+    public static void setCourseInstructorArray(String[] courseInstructorArray) {
+        CourseData.courseInstructorArray = courseInstructorArray;
+    }
+
+    public CourseData() {
+
+    }
 }
