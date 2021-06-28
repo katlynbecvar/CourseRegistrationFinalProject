@@ -17,7 +17,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> {
-    private static ArrayList<CourseData> courseData;
+    static ArrayList<CourseData> courseData;
 
     public static class CourseViewHolder extends RecyclerView.ViewHolder {
 
@@ -56,7 +56,10 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         TextView textViewInstructor = holder.textViewInstructur;
         TextView textViewCreditHours = holder.textViewCreditHour;
 
-        textViewCourseName.setText(CourseData.get());
+        textViewCourseName.setText(CourseData.getCourseNameArray()[position]);
+        textViewCourseNumber.setText(CourseData.getCourseNumberArray()[position]);
+        textViewInstructor.setText(CourseData.getCourseInstructorArray()[position]);
+        textViewCreditHours.setText(CourseData.getCreditHoursArray()[position]);
 
     }
 

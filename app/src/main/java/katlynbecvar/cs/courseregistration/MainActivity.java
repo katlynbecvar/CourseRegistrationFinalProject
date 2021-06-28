@@ -6,12 +6,15 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
+
+import static katlynbecvar.cs.courseregistration.CourseAdapter.courseData;
 
 public class MainActivity extends AppCompatActivity {
     Button viewClassButton;
@@ -31,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        myViewOnClickListener = new myViewOnClickListener(this);
+      //  myViewOnClickListener = new myViewOnClickListener(this);
         recyclerView.setHasFixedSize(true);
 
         recyclerViewLayoutManager = new LinearLayoutManager(this);
@@ -49,9 +52,8 @@ public class MainActivity extends AppCompatActivity {
             ));
         }
 
-        adapter = new CourseAdapter(courseInfo);
+        adapter = new CourseAdapter(courseData);
         recyclerView.setAdapter(adapter);
-
 
         //initialize buttons and set onClickListener
         viewClassButton = (Button)findViewById(R.id.view_classes_button);
@@ -96,4 +98,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+  /*  private static class myViewOnClickListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+
+        }
+    }
+
+   */
+
 }
