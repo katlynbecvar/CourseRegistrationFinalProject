@@ -4,12 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-
-public class DropClasses extends AppCompatActivity {
+public class RegisterForClassesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drop_classes);
+        setContentView(R.layout.activity_register_for_classes);
     }
 }

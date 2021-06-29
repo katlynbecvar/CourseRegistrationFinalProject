@@ -28,6 +28,7 @@ public class CourseData {
             "Cindy Howard","Sung Kim","Greg Manning","Lucien Ngalamou","Safwan Omari","Jason Perry","Mathias Plass","John Rinderer",
             "Michael Smith"};
 
+
     public static String[] getCourseNameArray() {
         return courseNameArray;
     }
