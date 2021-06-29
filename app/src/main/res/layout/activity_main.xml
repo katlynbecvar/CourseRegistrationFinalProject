@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <ImageView
         android:id="@+id/imageView"
@@ -21,7 +22,8 @@
         app:layout_constraintHorizontal_bias="0.556"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lewis_logo" />
+        app:srcCompat="@drawable/lewis_logo"
+        android:layout_gravity="center_horizontal"/>
 
     <Button
         android:id="@+id/view_classes_button"
@@ -38,7 +40,8 @@
         app:layout_constraintHorizontal_bias="0.568"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:rippleColor="@color/secondaryColor" />
+        app:rippleColor="@color/secondaryColor"
+        android:layout_gravity="center_horizontal"/>
 
     <Button
         android:id="@+id/register_f0r_classes_button"
@@ -51,7 +54,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.568"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_classes_button" />
+        app:layout_constraintTop_toBottomOf="@+id/view_classes_button"
+        android:layout_gravity="center_horizontal"/>
 
     <Button
         android:id="@+id/view_schedule_button"
@@ -64,7 +68,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.568"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/drop_classes_button" />
+        app:layout_constraintTop_toBottomOf="@+id/drop_classes_button"
+        android:layout_gravity="center_horizontal"/>
 
     <Button
         android:id="@+id/drop_classes_button"
@@ -77,6 +82,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.568"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_f0r_classes_button" />
+        app:layout_constraintTop_toBottomOf="@+id/register_f0r_classes_button"
+        android:layout_gravity="center_horizontal"/>
 </LinearLayout>
 

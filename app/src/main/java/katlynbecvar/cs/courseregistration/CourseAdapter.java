@@ -13,6 +13,9 @@ import java.util.ArrayList;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> {
 
+    public CourseAdapter(ViewClassesActivity viewClassesActivity, ArrayList<CourseDataModel> courseInfo) {
+    }
+
     //can just pass array, or get array from datasource and create method setData... in adapter class
     //call method from view classes activity and then set data when recycler view is created i.e Course Rating Database/ToD0
     public static class CourseViewHolder extends RecyclerView.ViewHolder {
@@ -43,7 +46,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
     @Override
     public void onBindViewHolder(CourseAdapter.CourseViewHolder holder, int position) {
-        //CourseData courseData = new CourseData(courseData));
+        //CourseData courseData = new CourseData(courseData);
         ArrayList<String> courseName = new ArrayList<String>();
         ArrayList<String> courseNumber = new ArrayList<String>();
         ArrayList<String> instructor = new ArrayList<String>();
