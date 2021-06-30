@@ -11,6 +11,10 @@
     <string name="view_classes_header">View Classes</string>
     <string name="register_for_class_header">Register for Classes</string>
     <string name="course_registration_header">Course Registration</string>
+    <string name="course_name">course name</string>
+    <string name="course_number">Course Number</string>
+    <string name="instructor_name">Instructor Name:</string>
+    <string name="credit_hours">Credit Hours</string>
 
 
     <string-array name="courseName">

@@ -1,3 +1,4 @@
+/*
 package katlynbecvar.cs.courseregistration;
 
 import io.grpc.Server;
@@ -65,3 +66,4 @@ public class CourseData {
 
     }
 }
+*/

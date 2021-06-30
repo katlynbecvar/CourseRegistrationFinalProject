@@ -1,3 +1,4 @@
+
 package katlynbecvar.cs.courseregistration;
 
 import android.content.Intent;
@@ -17,37 +18,34 @@ import java.util.ArrayList;
 
 
 public class ViewClassesActivity extends AppCompatActivity {
-    private static ArrayList<CourseDataModel> courseInfo;
-    private static RecyclerView recyclerView;
-    private static RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager recyclerViewLayoutManager;
+    private RecyclerView recyclerView;
+    private ArrayList<CourseModel> courseModelArrayList;
 
     @Override
     public void onCreate(Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
         setContentView(R.layout.activity_view_classes);
+        recyclerView = findViewById(R.id.recycler_view);
 
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerview);
-        recyclerView.setHasFixedSize(true);
+        //create array
+        courseModelArrayList = new ArrayList<>();
+        courseModelArrayList.add(new CourseModel("Applied Calculus", "24000", "Quinn Straton", 4));
+        courseModelArrayList.add(new CourseModel("Programming Fundamentals", "20000", "Natalie Adams", 3));
+        courseModelArrayList.add(new CourseModel("Computer Organization", "21000", "Eric Chou", 3));
+        courseModelArrayList.add(new CourseModel("Mobile Application Development", "45000", "Cindy Howard", 3));
+        courseModelArrayList.add(new CourseModel("Software Systems Capstone Project", "50000", "Natalie Adams", 3));
+        courseModelArrayList.add(new CourseModel("Scientific Computing", "30000", "Greg Manning", 3));
+        courseModelArrayList.add(new CourseModel("Object Oriented Programming", "25000", "John Rinderer", 3));
+        courseModelArrayList.add(new CourseModel("Encryption", "24500", "Eric Chou", 3));
+        courseModelArrayList.add(new CourseModel("Video Game Programming", "35000", "Quinn Straton", 3));
+        courseModelArrayList.add(new CourseModel("Cloud Computing", "41000", "Cindy Howard", 3));
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+        CourseAdapter courseAdapter = new CourseAdapter(this, courseModelArrayList);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false );
         recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-
-        CourseAdapter adapter = new CourseAdapter(ViewClassesActivity.this, courseInfo);
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(courseAdapter);
 
 
-       courseInfo = new ArrayList<CourseDataModel>(32);
-  /*      for (int i = 0; i < CourseData.courseNameArray.length; i++) {
 
-            courseInfo.add(new CourseDataModel(
-                    CourseData.courseNameArray[i],
-                    CourseData.courseNumberArray[i],
-                    CourseData.courseInstructorArray[i],
-                    CourseData.creditHoursArray[i]
-            ));
-        }
-*/
     }
 }
