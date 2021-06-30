@@ -9,10 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.database.annotations.NotNull;
 
 import java.util.ArrayList;
 
@@ -35,9 +33,9 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     public void onBindViewHolder(CourseAdapter.ViewHolder holder, int position) {
         CourseModel courseModel = courseModelArrayList.get(position);
         holder.courseName.setText(courseModel.getCourse_name());
-        holder.courseNumber.setText(courseModel.getCourse_number());
+       /* holder.courseNumber.setText(courseModel.getCourse_number());
         holder.instructor.setText(courseModel.getCourse_instructor());
-        holder.creditHour.setText(courseModel.getCredit_hour());
+        holder.creditHour.setText(courseModel.getCredit_hour());*/
 
     }
 
@@ -45,17 +43,21 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     public int getItemCount() {
         return courseModelArrayList.size();
     }
+
     public class ViewHolder extends RecyclerView.ViewHolder{
         private ImageView computerLogo;
-        private TextView courseName, courseNumber, instructor, creditHour;
+        private TextView courseName;
+        private TextView courseNumber;
+        private TextView instructor;
+        private TextView creditHour;
 
         public ViewHolder(View itemView){
             super(itemView);
-            computerLogo = itemView.findViewById(R.id.comp_logo);
             courseName = itemView.findViewById(R.id.course_name);
-            courseNumber.findViewById(R.id.course_number);
+          /*  courseNumber.findViewById(R.id.course_number);
             instructor.findViewById(R.id.instructor);
             creditHour.findViewById(R.id.credit_hour);
+            computerLogo = itemView.findViewById(R.id.comp_logo);*/
         }
     }
 

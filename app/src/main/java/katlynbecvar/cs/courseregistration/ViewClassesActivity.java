@@ -22,8 +22,8 @@ public class ViewClassesActivity extends AppCompatActivity {
     private ArrayList<CourseModel> courseModelArrayList;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_classes);
         recyclerView = findViewById(R.id.recycler_view);
 
@@ -44,8 +44,6 @@ public class ViewClassesActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false );
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(courseAdapter);
-
-
 
     }
 }
