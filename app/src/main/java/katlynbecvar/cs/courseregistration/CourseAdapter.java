@@ -34,9 +34,9 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     public void onBindViewHolder(CourseAdapter.ViewHolder holder, int position) {
         CourseModel courseModel = courseModelArrayList.get(position);
         holder.courseName.setText(courseModel.getCourse_name());
-        /*holder.courseNumber.setText(courseModel.getCourse_number());
+        holder.courseNumber.setText(courseModel.getCourse_number());
         holder.instructor.setText(courseModel.getCourse_instructor());
-        holder.creditHour.setText(courseModel.getCredit_hour());*/
+        holder.creditHour.setText(Integer.toString(courseModel.getCredit_hour()));
 
     }
 
@@ -47,16 +47,16 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView courseName;
-        /*private TextView courseNumber;
+        private TextView courseNumber;
         private TextView instructor;
-        private TextView creditHour;*/
+        private TextView creditHour;
 
         public ViewHolder(View itemView){
             super(itemView);
             courseName = itemView.findViewById(R.id.course_name);
-           /* courseNumber.findViewById(R.id.course_number);
-            instructor.findViewById(R.id.instructor);
-            creditHour.findViewById(R.id.credit_hour)*/;
+            courseNumber = itemView.findViewById(R.id.course_number);
+            instructor = itemView.findViewById(R.id.instructor);
+            creditHour = itemView.findViewById(R.id.credit_hour);
         }
     }
 

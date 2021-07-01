@@ -1,3 +1,4 @@
+
 package katlynbecvar.cs.courseregistration;
 
 import android.content.Intent;
@@ -5,13 +6,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.firebase.ui.auth.AuthUI;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,6 +23,10 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private String userID;
     private final static int RC_SIGN_IN = 1;
+    Button viewClassButton;
+    Button registerForClassButton;
+    Button dropClassButton;
+    Button viewScheduleButton;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,20 +34,12 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         mFirebaseAuth = FirebaseAuth.getInstance();
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                intent.putExtra("uid", userID);
-                startActivity(intent);
-            }
-        });
 
         FirebaseUser user = mFirebaseAuth.getCurrentUser();
         if (user != null) {
             userID = user.getUid();
         }
+
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(FirebaseAuth firebaseAuth) {
@@ -62,16 +58,54 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         };
-    }
-    public void onClick(int position){
-        Intent mainActivityIntent = new Intent(this, MainActivity.class);
-        startActivity(mainActivityIntent);
+
+        //initialize buttons and set onClickListener
+        viewClassButton = findViewById(R.id.view_classes_button);
+        viewClassButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent viewClassesIntent = new Intent(LoginActivity.this, ViewClassesActivity.class);
+                startActivity(viewClassesIntent);
+            }
+        });
+
+
+        registerForClassButton = findViewById(R.id.register_f0r_classes_button);
+        registerForClassButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerForClassIntent = new Intent(LoginActivity.this, RegisterForClassesActivity.class);
+                startActivity(registerForClassIntent);
+            }
+        });
+
+
+        dropClassButton = findViewById(R.id.drop_classes_button);
+        dropClassButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent dropClassIntent = new Intent(LoginActivity.this, DropClassesActivity.class);
+                startActivity(dropClassIntent);
+            }
+        });
+
+
+        viewScheduleButton = findViewById(R.id.view_schedule_button);
+        viewScheduleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent viewScheduleIntent = new Intent(LoginActivity.this, ViewScheduleActivity.class);
+                startActivity(viewScheduleIntent);
+            }
+        });
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mFirebaseAuth.addAuthStateListener(mAuthStateListener) ;
+        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
 
     @Override
@@ -88,10 +122,10 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.sign_out){
+        if (item.getItemId() == R.id.sign_out) {
             AuthUI.getInstance().signOut(this);
             return true;
-        }else{
+        } else {
             return super.onOptionsItemSelected(item);
         }
     }
@@ -99,14 +133,15 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == RC_SIGN_IN){
-            if(resultCode == RESULT_OK){
+        if (requestCode == RC_SIGN_IN) {
+            if (resultCode == RESULT_OK) {
                 FirebaseUser user = mFirebaseAuth.getCurrentUser();
-                if(user != null){
+                if (user != null) {
+
                     userID = user.getUid();
                 }
             }
-            if(resultCode == RESULT_CANCELED){
+            if (resultCode == RESULT_CANCELED) {
                 finish();
             }
         }

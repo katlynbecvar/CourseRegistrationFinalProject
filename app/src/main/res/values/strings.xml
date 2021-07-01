@@ -27,6 +27,7 @@
     <string name="enter_student_id_number">Enter Student ID Number:</string>
     <string name="sign_out">Sign Out</string>
     <string name="delete">Delete</string>
+    <string name="drop_class">Drop Class</string>
 
 
 </resources>
