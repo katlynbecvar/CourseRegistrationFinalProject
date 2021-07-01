@@ -28,6 +28,7 @@
     <string name="sign_out">Sign Out</string>
     <string name="delete">Delete</string>
     <string name="drop_class">Drop Class</string>
+    <string name="add">add</string>
 
 
 </resources>

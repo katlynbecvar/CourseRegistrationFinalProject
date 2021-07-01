@@ -2,6 +2,7 @@ package katlynbecvar.cs.courseregistration;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,12 +10,19 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+// add UID for DB
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterForClassesActivity extends AppCompatActivity {
+
+    EditText courseNameText, courseNumberText, courseInstructorText, creditHourText;
+    Button buttonRegister;
+    Register register;
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -29,40 +37,36 @@ public class RegisterForClassesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_for_classes);
 
-        EditText studentIDTextEdit = (EditText) findViewById(R.id.student_id_text_edit);
-        String studentIDEditText = studentIDTextEdit.getText().toString();
-
-        EditText courseNameTextEdit = (EditText) findViewById(R.id.course_name_edit_text);
-        String courseNameEditText = courseNameTextEdit.getText().toString();
-
-        EditText instructorTextEdit = (EditText) findViewById(R.id.course_instructor_edit_text);
-        String instructorEditText = instructorTextEdit.getText().toString();
-
-        EditText courseNumberTextEdit = (EditText) findViewById(R.id.course_number_text_edit);
-        String courseNumberEditText = courseNumberTextEdit.getText().toString();
-
-        EditText creditHoursTextEdit = (EditText) findViewById(R.id.credit_hour_text_edit);
-        String creditHourEditText = creditHoursTextEdit.getText().toString();
-
-        registerButton = findViewById(R.id.registration_submit_button);
-
-        userId = getIntent().getStringExtra("uid");
-
-        if (ref != null) {
-
-        } else {
-            //registerButton.setOnClickListener(new OnRegisterButtonClick());
-        }
-
-            if (courseModel != null) {
-                studentIDTextEdit.setText(courseModel.getStudent_id());
-                courseNameTextEdit.setText(courseModel.getCourse_name_text_edit());
-                instructorTextEdit.setText(courseModel.getInstructor_text_edit());
-                courseNumberTextEdit.setText(courseModel.getCourse_number_text_edit());
-                creditHoursTextEdit.setText(courseModel.getCredit_hour_text_edit());
-
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterForClassesActivity.this, RegisterForClassesActivity.class);
+                startActivity(intent);
             }
+        });
 
-        }
+        courseNameText = findViewById(R.id.course_name_edit_text);
+        courseInstructorText = findViewById(R.id.course_instructor_edit_text);
+        courseNumberText = findViewById(R.id.course_number_text_edit);
+        creditHourText = findViewById(R.id.credit_hour_text_edit);
+        buttonRegister = findViewById(R.id.registration_submit_button);
+        register = new Register();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Register");
+
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                register.setCourseName(courseNameText.getText().toString());
+                register.setCourseNumber(courseNumberText.getText().toString());
+                register.setCourseInstructor(courseInstructorText.getText().toString());
+                int creditHour = Integer.parseInt(creditHourText.getText().toString());
+                register.setCreditHour(creditHour);
+                databaseReference.push().setValue(register);
+                Toast.makeText(RegisterForClassesActivity.this, "Registration Saved", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
-
+}
