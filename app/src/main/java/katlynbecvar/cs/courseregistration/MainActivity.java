@@ -1,5 +1,6 @@
 package katlynbecvar.cs.courseregistration;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,11 +8,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
     Button viewClassButton;
     Button registerForClassButton;
     Button dropClassButton;
     Button viewScheduleButton;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +70,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
-
 
 }

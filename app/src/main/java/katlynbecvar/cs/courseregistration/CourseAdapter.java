@@ -3,6 +3,7 @@ package katlynbecvar.cs.courseregistration;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     public void onBindViewHolder(CourseAdapter.ViewHolder holder, int position) {
         CourseModel courseModel = courseModelArrayList.get(position);
         holder.courseName.setText(courseModel.getCourse_name());
-       /* holder.courseNumber.setText(courseModel.getCourse_number());
+        /*holder.courseNumber.setText(courseModel.getCourse_number());
         holder.instructor.setText(courseModel.getCourse_instructor());
         holder.creditHour.setText(courseModel.getCredit_hour());*/
 
@@ -45,19 +46,17 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private ImageView computerLogo;
         private TextView courseName;
-        private TextView courseNumber;
+        /*private TextView courseNumber;
         private TextView instructor;
-        private TextView creditHour;
+        private TextView creditHour;*/
 
         public ViewHolder(View itemView){
             super(itemView);
             courseName = itemView.findViewById(R.id.course_name);
-          /*  courseNumber.findViewById(R.id.course_number);
+           /* courseNumber.findViewById(R.id.course_number);
             instructor.findViewById(R.id.instructor);
-            creditHour.findViewById(R.id.credit_hour);
-            computerLogo = itemView.findViewById(R.id.comp_logo);*/
+            creditHour.findViewById(R.id.credit_hour)*/;
         }
     }
 

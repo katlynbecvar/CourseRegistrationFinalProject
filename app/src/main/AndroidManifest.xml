@@ -21,7 +21,7 @@
         <activity android:name=".RegisterForClassesActivity"
             android:label="@string/register_for_class_header"
             android:parentActivityName=".MainActivity"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
