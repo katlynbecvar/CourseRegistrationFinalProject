@@ -25,7 +25,6 @@ public class LoginActivity extends AppCompatActivity {
     private final static int RC_SIGN_IN = 1;
     Button viewClassButton;
     Button registerForClassButton;
-    Button dropClassButton;
     Button viewScheduleButton;
 
     protected void onCreate(Bundle savedInstanceState) {

@@ -11,10 +11,13 @@ import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.annotations.NotNull;
 
@@ -27,6 +30,8 @@ public class ViewScheduleActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private ViewScheduleAdapter viewScheduleAdapter;
     private ArrayList<ViewScheduleModel> scheduleList;
+    private Query query;
+    private FirebaseRecyclerAdapter<ViewScheduleModel, ViewScheduleAdapter.ScheduleViewHolder> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +42,16 @@ public class ViewScheduleActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        query = firebaseDatabase.getReference().child("register");
         recyclerView.setAdapter(viewScheduleAdapter);
+        FirebaseRecyclerOptions<ViewScheduleModel> options =
+                new FirebaseRecyclerOptions.Builder<ViewScheduleModel>()
+                        .setQuery(query, ViewScheduleModel.class).build();
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
+        adapter = new ViewScheduleAdapter(options,this);
+        recyclerView.setAdapter(viewScheduleAdapter);
         databaseReference.addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(DataSnapshot snapshot) {

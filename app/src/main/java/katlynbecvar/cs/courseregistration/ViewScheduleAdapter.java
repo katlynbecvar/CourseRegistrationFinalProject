@@ -18,11 +18,14 @@ public class ViewScheduleAdapter extends FirebaseRecyclerAdapter<ViewScheduleAct
     ArrayList<ViewScheduleModel> viewScheduleModels;
     Context context;
 
-   public ViewScheduleAdapter(FirebaseRecyclerOptions<ViewScheduleActivity> options,Context context) {
-       super(options);
-   }
+    public ViewScheduleAdapter(FirebaseRecyclerOptions<ViewScheduleActivity> options, ViewScheduleActivity context) {
+        super(options);
+    }
+
     @Override
     public ScheduleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+       context = parent.getContext();
+       LayoutInflater inflater = LayoutInflater.from(context);
         View view = LayoutInflater.from(context).inflate(R.layout.activity_view_schedule_card_view, parent, false );
         return new ScheduleViewHolder(view);
     }
