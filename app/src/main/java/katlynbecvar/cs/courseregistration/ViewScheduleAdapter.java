@@ -1,6 +1,7 @@
 package katlynbecvar.cs.courseregistration;
 
 import android.content.Context;
+import android.graphics.ColorSpace;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,14 +12,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class ViewScheduleAdapter extends FirebaseRecyclerAdapter<ViewScheduleActivity, ViewScheduleAdapter.ScheduleViewHolder>{
+public class ViewScheduleAdapter extends FirebaseRecyclerAdapter<ViewScheduleModel, ViewScheduleAdapter.ScheduleViewHolder>{
     ArrayList<ViewScheduleModel> viewScheduleModels;
     Context context;
 
-    public ViewScheduleAdapter(FirebaseRecyclerOptions<ViewScheduleActivity> options, ViewScheduleActivity context) {
+    public ViewScheduleAdapter(FirebaseRecyclerOptions<ViewScheduleModel> options, Context context) {
         super(options);
     }
 
@@ -32,32 +34,30 @@ public class ViewScheduleAdapter extends FirebaseRecyclerAdapter<ViewScheduleAct
 
 
     @Override
-    protected void onBindViewHolder(ViewScheduleAdapter.ScheduleViewHolder holder, int position, ViewScheduleActivity model) {
-        ViewScheduleModel viewScheduleModel = viewScheduleModels.get(position);
-        holder.courseName.setText(viewScheduleModel.getCourseName());
-        holder.courseInstructor.setText(viewScheduleModel.getCourseInstructor());
-        holder.courseNumber.setText(viewScheduleModel.getCourseNumber());
-        holder.creditHour.setText(viewScheduleModel.getCreditHour());
-        holder.itemView.setTag(viewScheduleModel.getId());
+    protected void onBindViewHolder(ViewScheduleAdapter.ScheduleViewHolder holder, int position, ViewScheduleModel model) {
+        holder.courseNameTextView.setText(model.getCourseName());
+        holder.courseNameTextView.setText(model.getCourseName());
+        holder.courseInstructorTextView.setText(model.getCourseInstructor());
+        holder.courseNumberTextView.setText(model.getCourseNumber());
+        holder.creditHourTextView.setText(model.getCreditHour());
+        holder.itemView.setTag(model.getId());
     }
 
-    @Override
-    public int getItemCount() {
-        return viewScheduleModels.size();
-    }
+
+
+
 
     public static class ScheduleViewHolder extends RecyclerView.ViewHolder {
 
-        TextView courseName, courseNumber, courseInstructor, creditHour;
+        TextView courseNameTextView, courseNumberTextView, courseInstructorTextView, creditHourTextView;
         public ScheduleViewHolder(View itemView){
             super(itemView);
-            courseName = itemView.findViewById(R.id.course_name_text_view);
-            courseNumber = itemView.findViewById(R.id.course_number_text_view);
-            courseInstructor = itemView.findViewById(R.id.instructor_text_view);
-            creditHour = itemView.findViewById(R.id.credit_hour_text_view);
+            courseNameTextView = itemView.findViewById(R.id.course_name_text_view);
+            courseNumberTextView = itemView.findViewById(R.id.course_number_text_view);
+            courseInstructorTextView = itemView.findViewById(R.id.instructor_text_view);
+            creditHourTextView = itemView.findViewById(R.id.credit_hour_text_view);
 
 
         }
-
     }
 }
