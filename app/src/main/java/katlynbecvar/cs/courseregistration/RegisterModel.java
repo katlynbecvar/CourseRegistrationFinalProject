@@ -1,13 +1,11 @@
 package katlynbecvar.cs.courseregistration;
 
-public class Register {
+public class RegisterModel {
     private String courseName, courseNumber, courseInstructor;
     private Integer creditHour;
     private String uid;
 
-    public Register(){
 
-    }
 
     public String getUid() { return uid; }
 

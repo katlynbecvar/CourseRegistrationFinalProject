@@ -37,14 +37,12 @@ public class ViewScheduleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_schedule);
-        FirebaseApp.initializeApp(this);
+
 
         recyclerView = findViewById(R.id.view_schedule_recycler_view);
-        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Register");
 
-        firebaseDatabase.getReference().child("Register");
         recyclerView.setAdapter(viewScheduleAdapter);
 
         FirebaseRecyclerOptions<ViewScheduleModel> options =
@@ -52,7 +50,6 @@ public class ViewScheduleActivity extends AppCompatActivity {
                         .setQuery(query, ViewScheduleModel.class).build();
 
         adapter = new ViewScheduleAdapter(options, this);
-        recyclerView.setAdapter(viewScheduleAdapter);
 
 
         ItemTouchHelper.SimpleCallback touchHelper = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {

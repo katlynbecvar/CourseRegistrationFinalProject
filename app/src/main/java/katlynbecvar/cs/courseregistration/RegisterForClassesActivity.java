@@ -19,7 +19,7 @@ public class RegisterForClassesActivity extends AppCompatActivity {
 
     EditText courseNameText, courseNumberText, courseInstructorText, creditHourText;
     Button buttonRegister;
-    Register register;
+    RegisterModel register;
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -49,7 +49,7 @@ public class RegisterForClassesActivity extends AppCompatActivity {
         courseNumberText = findViewById(R.id.course_number_text_edit);
         creditHourText = findViewById(R.id.credit_hour_text_edit);
         buttonRegister = findViewById(R.id.registration_submit_button);
-        register = new Register();
+        register = new RegisterModel();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Register");
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
