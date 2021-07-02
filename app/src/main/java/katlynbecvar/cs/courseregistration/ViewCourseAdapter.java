@@ -3,11 +3,9 @@ package katlynbecvar.cs.courseregistration;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,24 +13,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder>{
+public class ViewCourseAdapter extends RecyclerView.Adapter<ViewCourseAdapter.ViewHolder>{
     private Context context;
-    private ArrayList<CourseModel> courseModelArrayList;
+    private ArrayList<ViewCourseModel> courseModelArrayList;
 
-    public CourseAdapter(Context context, ArrayList<CourseModel> courseModelArrayList) {
+    public ViewCourseAdapter(Context context, ArrayList<ViewCourseModel> courseModelArrayList) {
         this.context = context;
         this.courseModelArrayList = courseModelArrayList;
     }
 
     @Override
-    public CourseAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewCourseAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(CourseAdapter.ViewHolder holder, int position) {
-        CourseModel courseModel = courseModelArrayList.get(position);
+    public void onBindViewHolder(ViewCourseAdapter.ViewHolder holder, int position) {
+        ViewCourseModel courseModel = courseModelArrayList.get(position);
         holder.courseName.setText(courseModel.getCourse_name());
         holder.courseNumber.setText(courseModel.getCourse_number());
         holder.instructor.setText(courseModel.getCourse_instructor());

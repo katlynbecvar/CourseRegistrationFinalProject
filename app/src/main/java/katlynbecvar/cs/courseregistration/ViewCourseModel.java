@@ -1,6 +1,6 @@
 package katlynbecvar.cs.courseregistration;
 
-public class CourseModel {
+public class ViewCourseModel {
     private String course_name;
     private String course_number;
     private String course_instructor;
@@ -8,7 +8,7 @@ public class CourseModel {
 
 
 
-    public CourseModel(String course_name, String course_number, String course_instructor, int credit_hour) {
+    public ViewCourseModel(String course_name, String course_number, String course_instructor, int credit_hour) {
         this.course_name = course_name;
         this.course_number = course_number;
         this.course_instructor = course_instructor;

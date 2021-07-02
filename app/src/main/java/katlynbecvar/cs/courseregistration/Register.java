@@ -3,10 +3,16 @@ package katlynbecvar.cs.courseregistration;
 public class Register {
     private String courseName, courseNumber, courseInstructor;
     private Integer creditHour;
+    private String uid;
 
     public Register(){
 
     }
+
+    public String getUid() { return uid; }
+
+    public void setUid(String uid) { this.uid = uid; }
+
     public String getCourseName() {
         return courseName;
     }

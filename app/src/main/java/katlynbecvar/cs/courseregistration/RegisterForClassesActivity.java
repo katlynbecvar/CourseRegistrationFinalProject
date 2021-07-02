@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.view.MenuItem;
 import android.widget.Toast;
 
 // add UID for DB
@@ -28,7 +25,7 @@ public class RegisterForClassesActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private String userId;
     private String ref;
-    private CourseModel courseModel;
+    private ViewCourseModel courseModel;
     private Button registerButton;
 
 
@@ -45,6 +42,7 @@ public class RegisterForClassesActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
         courseNameText = findViewById(R.id.course_name_edit_text);
         courseInstructorText = findViewById(R.id.course_instructor_edit_text);

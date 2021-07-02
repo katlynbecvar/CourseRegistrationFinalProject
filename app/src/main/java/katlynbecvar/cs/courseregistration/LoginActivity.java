@@ -81,16 +81,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        dropClassButton = findViewById(R.id.drop_classes_button);
-        dropClassButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dropClassIntent = new Intent(LoginActivity.this, DropClassesActivity.class);
-                startActivity(dropClassIntent);
-            }
-        });
-
-
         viewScheduleButton = findViewById(R.id.view_schedule_button);
         viewScheduleButton.setOnClickListener(new View.OnClickListener() {
             @Override

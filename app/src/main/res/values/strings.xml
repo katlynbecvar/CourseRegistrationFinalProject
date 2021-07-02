@@ -29,6 +29,10 @@
     <string name="delete">Delete</string>
     <string name="drop_class">Drop Class</string>
     <string name="add">add</string>
+    <string name="course_name_text_view">Course Name:</string>
+    <string name="course_number_text_view">Course Number Text View</string>
+    <string name="instructor">Instructor:</string>
+    <string name="credit_hours_text_view">Credit Hours:</string>
 
 
 </resources>
