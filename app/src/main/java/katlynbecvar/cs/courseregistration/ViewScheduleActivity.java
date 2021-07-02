@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -32,15 +33,13 @@ public class ViewScheduleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_schedule);
 
-        recyclerView.findViewById(R.id.view_schedule_recycler_view);
+        recyclerView = findViewById(R.id.view_schedule_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        scheduleList = new ArrayList<>();
-        viewScheduleAdapter = new ViewScheduleAdapter(this, scheduleList);
         recyclerView.setAdapter(viewScheduleAdapter);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("User");
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
         databaseReference.addValueEventListener(new ValueEventListener(){
             @Override
@@ -56,10 +55,18 @@ public class ViewScheduleActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError error) {
+
                 finish();
             }
 
         });
 
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.drop_option, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 }
