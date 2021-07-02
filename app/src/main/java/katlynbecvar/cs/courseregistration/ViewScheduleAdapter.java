@@ -38,7 +38,7 @@ public class ViewScheduleAdapter extends FirebaseRecyclerAdapter<ViewScheduleAct
         holder.courseInstructor.setText(viewScheduleModel.getCourseInstructor());
         holder.courseNumber.setText(viewScheduleModel.getCourseNumber());
         holder.creditHour.setText(viewScheduleModel.getCreditHour());
-
+        holder.itemView.setTag(viewScheduleModel.getId());
     }
 
     @Override

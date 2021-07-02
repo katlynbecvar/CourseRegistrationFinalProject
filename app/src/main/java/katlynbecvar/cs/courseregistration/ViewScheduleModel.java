@@ -3,6 +3,12 @@ package katlynbecvar.cs.courseregistration;
 public class ViewScheduleModel {
     String courseName, courseInstructor, creditHour, courseNumber;
 
+    int Id = 1;
+
+    public int getId() { return Id; }
+
+    public void setId(int id) { Id = id; }
+
     public String getCourseName() {
         return courseName;
     }
