@@ -26,8 +26,6 @@ import java.util.ArrayList;
 public class ViewScheduleActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private FirebaseDatabase firebaseDatabase;
-    private DatabaseReference databaseReference;
     private ArrayList<ViewScheduleModel> scheduleList;
     private Query query;
     private ViewScheduleAdapter adapter;
@@ -71,15 +69,4 @@ public class ViewScheduleActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        adapter.startListening();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        adapter.stopListening();
-    }
 }
