@@ -16,35 +16,33 @@ import com.google.firebase.database.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class ViewScheduleAdapter extends FirebaseRecyclerAdapter<ViewScheduleModel, ViewScheduleAdapter.ScheduleViewHolder>{
+public class ViewScheduleAdapter extends FirebaseRecyclerAdapter<RegisterModel, ViewScheduleAdapter.ScheduleViewHolder>{
     ArrayList<ViewScheduleModel> viewScheduleModels;
     Context context;
 
-    public ViewScheduleAdapter(FirebaseRecyclerOptions<ViewScheduleModel> options, Context context) {
+
+
+
+    public ViewScheduleAdapter(FirebaseRecyclerOptions<RegisterModel> options, ViewScheduleActivity context) {
         super(options);
     }
+
 
     @Override
     public ScheduleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
        context = parent.getContext();
        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_view_schedule_card_view, parent, false );
+        View view = inflater.inflate(R.layout.activity_view_schedule_card_view, parent, false );
         return new ScheduleViewHolder(view);
     }
 
-
     @Override
-    protected void onBindViewHolder(ViewScheduleAdapter.ScheduleViewHolder holder, int position, ViewScheduleModel model) {
-        holder.courseNameTextView.setText(model.getCourseName());
-        holder.courseNameTextView.setText(model.getCourseName());
+    protected void onBindViewHolder(ViewScheduleAdapter.ScheduleViewHolder holder, int position, RegisterModel model) {
         holder.courseInstructorTextView.setText(model.getCourseInstructor());
+        holder.courseNameTextView.setText(model.getCourseName());
         holder.courseNumberTextView.setText(model.getCourseNumber());
         holder.creditHourTextView.setText(model.getCreditHour());
-        holder.itemView.setTag(model.getId());
     }
-
-
-
 
 
     public static class ScheduleViewHolder extends RecyclerView.ViewHolder {
@@ -56,8 +54,6 @@ public class ViewScheduleAdapter extends FirebaseRecyclerAdapter<ViewScheduleMod
             courseNumberTextView = itemView.findViewById(R.id.course_number_text_view);
             courseInstructorTextView = itemView.findViewById(R.id.instructor_text_view);
             creditHourTextView = itemView.findViewById(R.id.credit_hour_text_view);
-
-
         }
     }
 }

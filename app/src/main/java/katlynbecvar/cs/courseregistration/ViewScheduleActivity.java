@@ -28,7 +28,6 @@ public class ViewScheduleActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    private ViewScheduleAdapter viewScheduleAdapter;
     private ArrayList<ViewScheduleModel> scheduleList;
     private Query query;
     private ViewScheduleAdapter adapter;
@@ -38,18 +37,16 @@ public class ViewScheduleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_schedule);
 
-
         recyclerView = findViewById(R.id.view_schedule_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Register");
 
-        recyclerView.setAdapter(viewScheduleAdapter);
+        FirebaseRecyclerOptions<RegisterModel> register =
+                new FirebaseRecyclerOptions.Builder<RegisterModel>()
+                        .setQuery(query, RegisterModel.class).build();
+        query = FirebaseDatabase.getInstance().getReference().child("Register");
 
-        FirebaseRecyclerOptions<ViewScheduleModel> options =
-                new FirebaseRecyclerOptions.Builder<ViewScheduleModel>()
-                        .setQuery(query, ViewScheduleModel.class).build();
-
-        adapter = new ViewScheduleAdapter(options, this);
+        recyclerView.setAdapter(adapter);
+        adapter = new ViewScheduleAdapter(register, this);
 
 
         ItemTouchHelper.SimpleCallback touchHelper = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
@@ -65,11 +62,24 @@ public class ViewScheduleActivity extends AppCompatActivity {
                 scheduleList.remove(position);
                 adapter.notifyDataSetChanged();
             }
+
         };
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(touchHelper);
         itemTouchHelper.attachToRecyclerView(recyclerView);
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter.startListening();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        adapter.stopListening();
     }
 }
